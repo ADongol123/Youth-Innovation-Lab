@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import React, { useState } from "react";
+import Task1 from "./components/Task1";
+import Task2 from "./components/Task2";
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 function App() {
+  const [state, setState] = useState();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Tabs isLazy>
+      <TabList h="10vh" margin="auto" width="50%">
+        <Tab>Task 1</Tab>
+        <Tab>Task 2</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <Task1 />
+        </TabPanel>
+        <TabPanel>
+          <Task2 />
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
   );
 }
 
